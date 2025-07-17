@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bigboy-dgreat.github.io/one-website",
+  "homepage": "dev.omozeone.com
+",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
