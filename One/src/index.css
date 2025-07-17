@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom scrollbar for the mobile menu */
+.mobile-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mobile-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.mobile-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 4px;
+}
+
+.mobile-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a0;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.mobile-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.mobile-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
