@@ -1,7 +1,6 @@
 import { motion, useInView } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react'
-import { FaUserGraduate } from 'react-icons/fa';
-import { FaChalkboardTeacher } from 'react-icons/fa';
+import React, { useEffect, useRef, useState } from 'react';
+import { FaUserGraduate, FaChalkboardTeacher } from 'react-icons/fa';
 import { ArrowRight } from 'lucide-react';
 
 const SubFeature = () => {
@@ -10,17 +9,23 @@ const SubFeature = () => {
   const underlineRef = useRef(null);
   const containerRef = useRef(null);
   const [activeRef, setActiveRef] = useState(null);
-  const lineRef = useRef(null)
-  const isInView = useInView(lineRef, { once: true })
+  const lineRef = useRef(null);
+  const isInView = useInView(lineRef, { once: true });
 
   useEffect(() => {
     const moveUnderline = () => {
-      if (!activeRef?.current || !underlineRef.current || !containerRef.current) return;
-
-      const target = activeRef.current;
       const underline = underlineRef.current;
       const container = containerRef.current;
 
+      if (!underline || !container) return;
+
+      if (!activeRef?.current) {
+        // Hide underline when not hovering
+        underline.style.width = `0px`;
+        return;
+      }
+
+      const target = activeRef.current;
       const { left, width } = target.getBoundingClientRect();
       const containerLeft = container.getBoundingClientRect().left;
 
@@ -29,21 +34,21 @@ const SubFeature = () => {
     };
 
     moveUnderline();
-    window.addEventListener("resize", moveUnderline);
-    return () => window.removeEventListener("resize", moveUnderline);
+    window.addEventListener('resize', moveUnderline);
+    return () => window.removeEventListener('resize', moveUnderline);
   }, [activeRef]);
 
   return (
     <section className="bg-[#053F54] py-16 px-4 md:px-10">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* HEADER */}
         <div className="mb-10">
           <div className="flex items-center space-x-2">
             <motion.div
-            ref={lineRef}
+              ref={lineRef}
               initial={{ width: 0 }}
-              animate={{ width: isInView ? 24 : 0}}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              animate={{ width: isInView ? 24 : 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
               className="h-0.5 bg-blue-500"
             />
             <p className="text-sm text-blue-500 font-semibold">Portal</p>
@@ -54,10 +59,10 @@ const SubFeature = () => {
           </p>
         </div>
 
-        
         <div
           ref={containerRef}
           className="grid md:grid-cols-2 gap-6 relative"
+          onMouseLeave={() => setActiveRef(null)} // ✨ Remove underline when not hovering
         >
           {/* Underline Element */}
           <div
@@ -66,7 +71,7 @@ const SubFeature = () => {
             style={{ width: 0, left: 0 }}
           />
 
-        
+          {/* Student Portal Card */}
           <div
             ref={enrollRef}
             onMouseEnter={() => setActiveRef(enrollRef)}
@@ -76,7 +81,7 @@ const SubFeature = () => {
               <div className="bg-sky-800 p-2 rounded-md">
                 <FaUserGraduate className="text-xl" />
               </div>
-              <h3 className="text-xl font-semibold">Student Portal</h3>
+              <h3 className="text-xl font-semibold text-white">Student Portal</h3>
             </div>
             <p className="text-sky-100 mb-6">
               Explore your courses, view schedules, and get support &mdash;everything you need for success.
@@ -87,7 +92,7 @@ const SubFeature = () => {
             </a>
           </div>
 
-          
+          {/* Faculty Portal Card */}
           <div
             ref={learnRef}
             onMouseEnter={() => setActiveRef(learnRef)}
@@ -97,7 +102,7 @@ const SubFeature = () => {
               <div className="bg-sky-800 p-2 rounded-md">
                 <FaChalkboardTeacher className="text-xl" />
               </div>
-              <h3 className="text-xl font-semibold">Faculty Portal</h3>
+              <h3 className="text-xl font-semibold text-white">Faculty Portal</h3>
             </div>
             <p className="text-sky-100 mb-6">
               Manage classes, student records, and academic tools in one place.
@@ -114,3 +119,4 @@ const SubFeature = () => {
 };
 
 export default SubFeature;
+

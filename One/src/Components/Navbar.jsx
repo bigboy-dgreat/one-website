@@ -82,14 +82,14 @@ const Navbar = () => {
             <input
               type='text'
               placeholder='Search'
-              className='border border-gray-300 pl-8 pr-20 py-1 rounded-md text-sm w-40 group-hover:w-64 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400'
+              className='border border-gray-300 pl-8 pr-20 py-2 rounded-md text-sm w-40 group-hover:w-64 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400'
             />
             <img
               src={search}
               alt='Search Icon'
               className='absolute left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 pointer-events-none'
             />
-            <button className='absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#0D95C9] text-white text-xs px-3 py-1 rounded-md hover:bg-[#0b7eb3] transition duration-300'>
+            <button className='absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#0D95C9] text-white text-xs px-3 py-2 rounded-md hover:bg-[#0b7eb3] transition duration-300'>
               Apply
             </button>
           </div>
@@ -104,7 +104,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`fixed top-0 right-0 h-full w-4/5 sm:w-3/5 bg-gray-100 text-black z-50 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} overflow-y-auto scroll-smooth`}>
+      <div className={`fixed top-0 right-0 h-full w-4/6 sm:w-3/5 bg-gray-100 text-black z-50 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} overflow-y-auto scroll-smooth`}>
         <div className='flex justify-end p-4'>
           <button onClick={() => setMobileMenuOpen(false)}>
             <XMarkIcon className='h-10 w-10 p-2 border border-gray-400 rounded' />

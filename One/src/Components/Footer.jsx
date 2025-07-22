@@ -32,7 +32,7 @@ const Footer = () => {
             <img
             src={Flogo}
             alt='/'
-            className='w-full h-full object-contain object-right opacity-20 ml-96 mt-20'/>
+            className='w-full h-full object-contain object-center md:object-right opacity-20 md:opacity-20'/>
             <div className='absolute inset-0 bg-[#053F54] opacity-90' />
       </div>
 

@@ -8,7 +8,7 @@ import { FaWhatsapp,
        import faqs from './faqData';
 
 const Faq = () => {
-      const [openIndex, setOpenIndex] = useState(null)
+      const [openIndex, setOpenIndex] = useState(0)
       const lineRef = useRef(null)
       const isInView = useInView(lineRef, { once: true })
       
@@ -53,29 +53,49 @@ const Faq = () => {
                   }}
                   className='mb-6'
                   />
-                  <div className='bg-white rounded-lg shadow p-6 w-full'>
+                  <div className=' rounded-lg shadow p-6 w-full'>
                         <p className='text-gray-700 text-center md:text-left mb-3'>
                               Connect with an Admission Specialist to learn more about the Omoze Nursing Educator application process
                         </p>
-                        <div className='flex flex-col gap-2 text-sm'>
-                              <div className='flex items-center gap-2'>
-                                    <FaWhatsapp className='text-green-500' />
-                                    <span className='font-semibold'>+234 902 103 9064</span>
-                              </div>
-                              <div className='flex items-center gap-2'>
-                                    <FaPhoneAlt className='text-blue-500' />
-                                    <span className='font-semibold'>+234 703 729 0197</span>
-                              </div>
-                              <div className='flex items-center gap-2'>
-                                    <FaEnvelope className='text-gray-500' />
-                                    <span className='font-semibold'>warrinocarrylast@protonmail</span>
-                              </div>
+                    <div className='flex flex-col gap-6 text-sm text-[#032d3c]'>
+                        <div>
+                              <h4 className='text-gray-600 mb-1'>Whatsapp</h4>
+                             <a href="https://wa.me/2349021039064" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                                    <FaWhatsapp className='text-green-500 text-xl' />
+                                    <span className='font-semibold text-base'>+234 902 103 9064</span>
+                                    </a>
+                             
                         </div>
+
+                        <div>
+                              <h4 className='text-gray-600 mb-1'>Phone number</h4>
+                              <a href="tel:+2347037290197" className="flex items-center gap-2 hover:underline">
+
+                                    <FaPhoneAlt className='text-sky-500 text-xl' />
+                                    <span className='font-semibold text-bold'>
+                                          +234 703 729 0197
+                                    </span>
+                              </a>
+                        </div>
+
+                        <div>
+                              <h4 className='text-gray-600 mb-1'>Email 
+                                    address
+                              </h4>
+                              <a href="mailto:warrinocarrylast@protonmail.com" className="flex items-center gap-2 hover:underline">
+                                    <FaEnvelope className='text-sky-500 text-xl' />
+                                    <span className='font-semibold text-base'>
+                                          warrinocarrylast@protonmail.com
+                                    </span>
+                                    </a>
+                        </div>
+                    </div>
+                        {/* --- */}
                   </div>
                   </div>
 
                   <div className='md:w-2/3'>
-                  <ul className='divide-y divide-gray-200 bg-white rounded-lg shadow'>
+                  <ul className='divide-y divide-gray-200 rounded-lg'>
                         {faqs.map((f, idx) => (
                               <li key={idx} className='p-4'>
                                     <button

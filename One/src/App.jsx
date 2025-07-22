@@ -9,12 +9,15 @@ import PartnershipSection from './Components/PartnershipSection'
 import SubsetHero from './Components/SubsetHero'
 import Faq from './Components/Faq'
 import Footer from './Components/Footer'
+import Subnav from './Components/Subnav'
 
 
 const App = () => {
   return (
     <>
       <Navbar />
+      <div className='pt-[115px]'>
+      <Subnav />
       <Hero />
       <SubHero />
       <Features />
@@ -23,7 +26,9 @@ const App = () => {
       <PartnershipSection />
       <SubsetHero />
       <Faq />
+       </div>
       <Footer />
+
      
     </>
   )

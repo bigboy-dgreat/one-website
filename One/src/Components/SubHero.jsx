@@ -7,7 +7,7 @@ const SubHero = () => {
             {/* Heading */}
             <div>
                   <h2 className='text-3xl md:text-4xl font-bold leading-snug'>
-                        Where Your Nursing Journey<br />Begins &mdash;<span className='text-[#00b0ea]'>Accelerated</span>
+                        Where Your Nursing Journey<br />Begins &mdash;<span className='text-white'>Accelerated</span>
                   </h2>
             </div>
 

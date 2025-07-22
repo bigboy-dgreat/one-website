@@ -33,7 +33,7 @@ const Hero = () => {
       <div className='max-w-4xl mx-auto text-center px-4 py-16'>
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900'>
                   Level Up Your Nursing Career with <br className='hidden sm:block' />
-                  <span className='text-blue-700'>OMOZE"s Accelerated Programs</span>
+                  <span className='text-blue-700'>OMOZE's Accelerated Programs</span>
             </h1>
             <p className='mt-6 text-gray-600 text-lg max-w-2xl mx-auto'>
                   We don't just teach nursing - we ignite futures and transform lives through world-class

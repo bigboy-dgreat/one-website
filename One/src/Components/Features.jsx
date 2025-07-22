@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap, faClipboardList } from '@fortawesome/free-solid-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const Features = () => {
@@ -16,7 +16,7 @@ const Features = () => {
       image: '/table1.jpg',
       iconColor: 'big-blue-100 text-blue-500',
       shadowColor: 'rgba(59, 130, 246, 0.4)',
-      icon: faGraduationCap,
+      icon: faBook,
     },
     {
       title: 'Pre- Nursing Diploma',
@@ -25,7 +25,7 @@ const Features = () => {
       image:'/table2.jpg',
       iconColor: 'bg-arrange-100 text-orange-500',
       shadowColor: 'rgba(249, 115, 22, 0.4)',
-      icon: faClipboardList,
+      icon: faBook,
     },
   ];
 

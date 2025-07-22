@@ -29,7 +29,7 @@ const PartnershipSection = () => {
       }
   return (
     <section className='px-6 md:px-20 py-20 bg-gray-50 text-gray-900'>
-            <div className='max-w-6xl max-auto'>
+            <div className='max-w-7xl max-auto'>
                   <div className='flex items-center space-x-2'>
                         <motion.div
                         ref={lineRef}
